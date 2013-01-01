@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @student.first_name %>
+</p>
+
+<p>
+  <b>Middle name:</b>
+  <%= @student.middle_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @student.last_name %>
+</p>
+
+<p>
+  <b>Date of birth:</b>
+  <%= @student.date_of_birth %>
+</p>
+
+<p>
+  <b>Hair color:</b>
+  <%= @student.hair_color %>
+</p>
+
+<p>
+  <b>Eye color:</b>
+  <%= @student.eye_color %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @student.height %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @student.weight %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @student.sex %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
