@@ -32,4 +32,11 @@ class Student < ActiveRecord::Base
     Student.where(:first_name => "Tommy", :last_name => "Smith")
   end
 
+  def self.number_of_five_year_olds
+    five = Date.today - 5.years
+    year = five + 1.years
+
+    Student.where(:date_of_birth => five..year).count
+  end
+
 end
