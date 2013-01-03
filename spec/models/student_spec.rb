@@ -47,6 +47,16 @@ describe Student do
     end
   end
 
+  describe ".number_of_teenagers" do
+    it "should count the number of students that are teenagers" do
+      student = Student.create(:date_of_birth => Date.today - 15.years)
+      older = Student.create(:date_of_birth => Date.today - 19.years)
+      younger = Student.create(:date_of_birth => Date.today - 13.years + 1.day)
+
+      Student.number_of_teenagers.should == 1
+    end
+  end
+
 end
 
 

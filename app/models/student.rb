@@ -53,4 +53,10 @@ class Student < ActiveRecord::Base
     Student.where(:date_of_birth => seven..nine).count
   end
 
+  def self.number_of_teenagers
+    thirteen = Date.today - 13.years
+    nineteen = thirteen + 6.years
+
+    Student.where(:date_of_birth => thirteen..nineteen).count
+  end
 end
