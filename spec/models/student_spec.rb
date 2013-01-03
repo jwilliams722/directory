@@ -57,6 +57,16 @@ describe Student do
     end
   end
 
+  describe ".green_eye_students" do
+    it "should count the number of students with green eyes" do
+      student = Student.create(:eye_color => "green")
+      wrong_student = Student.create(:eye_color => "blue")
+
+
+      Student.green_eye_students.should == 1
+    end
+  end
+
 end
 
 

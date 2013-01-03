@@ -59,4 +59,9 @@ class Student < ActiveRecord::Base
 
     Student.where(:date_of_birth => thirteen..nineteen).count
   end
+
+  def self.green_eye_students
+
+    Student.where(:eye_color => "green").count
+  end
 end
