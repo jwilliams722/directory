@@ -18,14 +18,18 @@ class Student < ActiveRecord::Base
           :first_name => Faker::Name.first_name,
           :middle_name => Faker::Name.first_name,
           :last_name => Faker::Name.last_name,
-          :date_of_birth => birthdates.shuffle,
-          :hair_color => hair_color.shuffle,
-          :eye_color => eye_colors.shuffle,
+          :date_of_birth => birthdates.shuffle.first,
+          :hair_color => hair_color.shuffle.first,
+          :eye_color => eye_colors.shuffle.first,
           :height => inches.shuffle.first,
           :weight => pounds.shuffle.first,
-          :sex => genders.shuffle
+          :sex => genders.shuffle.first
       )
     end
+  end
+
+  def self.tommy_smiths
+    Student.where(:first_name => "Tommy", :last_name => "Smith")
   end
 
 end
