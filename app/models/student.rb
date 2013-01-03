@@ -64,4 +64,8 @@ class Student < ActiveRecord::Base
 
     Student.where(:eye_color => "green").count
   end
+
+  def self.any_students_with_same_first_names?
+    Student.count(:group => :first_name, :having => "count(*) > 1").any?
+  end
 end
