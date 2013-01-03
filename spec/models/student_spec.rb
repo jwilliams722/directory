@@ -81,6 +81,22 @@ describe Student do
       Student.any_students_with_same_first_names?.should == false
     end
   end
+
+  describe ".any_students_with_same_last_names?" do
+    it "should return true if there are any students with the same first name" do
+      student_one = Student.create(:first_name => "Sam", :last_name => "Smith")
+      student_two = Student.create(:first_name => "Bill", :last_name => "Smith")
+
+      Student.any_students_with_same_last_names?.should == true
+    end
+
+    it "should return false if there are not any students with the same last name" do
+      student_one = Student.create(:first_name => "Bill", :last_name => "Smith")
+      student_two = Student.create(:first_name => "Sam", :last_name => "Orr")
+
+      Student.any_students_with_same_last_names?.should == false
+    end
+  end
 end
 
 
