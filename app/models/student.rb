@@ -72,4 +72,8 @@ class Student < ActiveRecord::Base
   def self.any_students_with_same_last_names?
     Student.count(:group => :last_name, :having => "count(*) > 1").any?
   end
+
+  def self.number_of_male_students
+    Student.where(:sex => "Male").count
+  end
 end

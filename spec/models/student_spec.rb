@@ -97,6 +97,16 @@ describe Student do
       Student.any_students_with_same_last_names?.should == false
     end
   end
+
+  describe ".number_of_male_students" do
+    it "should return the number of male students" do
+      student_one = Student.create(:sex => "Male")
+      student_two = Student.create(:sex => "Male")
+      student_three = Student.create(:sex => "Female")
+
+      Student.number_of_male_students.should == 2
+    end
+  end
 end
 
 
