@@ -76,4 +76,8 @@ class Student < ActiveRecord::Base
   def self.number_of_male_students
     Student.where(:sex => "Male").count
   end
+
+  def self.number_of_female_students
+    Student.where(:sex => "Female").count
+  end
 end

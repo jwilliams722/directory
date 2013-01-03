@@ -107,6 +107,16 @@ describe Student do
       Student.number_of_male_students.should == 2
     end
   end
+
+  describe ".number_of_female_students" do
+    it "should return the number of male students" do
+      student_one = Student.create(:sex => "Male")
+      student_two = Student.create(:sex => "Male")
+      student_three = Student.create(:sex => "Female")
+
+      Student.number_of_female_students.should == 1
+    end
+  end
 end
 
 
