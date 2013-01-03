@@ -39,4 +39,11 @@ class Student < ActiveRecord::Base
     Student.where(:date_of_birth => five..year).count
   end
 
+  def self.number_of_six_year_olds
+    six = Date.today - 6.years
+    year = six + 1.years
+
+    Student.where(:date_of_birth => six..year).count
+  end
+
 end

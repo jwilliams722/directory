@@ -26,6 +26,17 @@ describe Student do
       Student.number_of_five_year_olds.should == 1
     end
   end
+
+  describe ".number_of_six_year_olds" do
+    it "should count the number of all students six years old" do
+      six = Student.create(:date_of_birth => Date.today - 6.years)
+      older = Student.create(:date_of_birth => Date.today - 7.years)
+      younger = Student.create(:date_of_birth => Date.today - 5.years + 1.day)
+
+      Student.number_of_six_year_olds.should == 1
+    end
+  end
+
 end
 
 
