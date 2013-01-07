@@ -126,6 +126,16 @@ describe Student do
       Student.redhead_students_first_names.should == ["Bill"]
     end
   end
+
+  describe ".students_ordered_by_birthdates" do
+    it "should order all students by their birthdates" do
+      student_one = Student.create(:date_of_birth => "30-8-2001")
+      student_two = Student.create(:date_of_birth => "22-1-2002")
+      student_three = Student.create(:date_of_birth => "15-4-2003")
+
+      Student.students_ordered_by_birthdates.should == [student_one, student_two, student_three]
+    end
+  end
 end
 
 
