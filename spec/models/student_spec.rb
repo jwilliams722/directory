@@ -117,6 +117,15 @@ describe Student do
       Student.number_of_female_students.should == 1
     end
   end
+
+  describe ".redhead_students_first_names" do
+    it "should return the first names of all the redhead students" do
+      bill = Student.create(:first_name => "Bill", :hair_color => "red")
+      mike = Student.create(:first_name => "Mike", :hair_color => "brown")
+
+      Student.redhead_students_first_names.should == ["Bill"]
+    end
+  end
 end
 
 
